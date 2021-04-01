@@ -4,26 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
         Graph graph = new Graph(true);
-        Vertex zero = new Vertex("A");
-        Vertex one = new Vertex("B");
-        Vertex two = new Vertex("C");
-        Vertex three = new Vertex("D");
-        Vertex four = new Vertex("E");
-        Vertex five = new Vertex("F");
-        Vertex six = new Vertex("G");
+        Vertex s = new Vertex("s");
+        Vertex t = new Vertex("t");
+        Vertex x = new Vertex("x");
+        Vertex y = new Vertex("y");
+        Vertex z = new Vertex("z");
 
-        graph.addEdge(zero, one, 8);
-        graph.addEdge(zero, two, 11);
-        graph.addEdge(one, three, 3);
-        graph.addEdge(one, four, 8);
-        graph.addEdge(one, two, 7);
-        graph.addEdge(two, four, 9);
-        graph.addEdge(three, four, 5);
-        graph.addEdge(three, five, 2);
-        graph.addEdge(four, six, 6);
-        graph.addEdge(five, four, 1);
-        graph.addEdge(five, six, 8);
+        graph.addEdge(s, t, 10);
+        graph.addEdge(s, y, 5);
+        graph.addEdge(t, x, 1);
+        graph.addEdge(t, y, 2);
+        graph.addEdge(y, z, 2);
+        graph.addEdge(y, t, 3);
+        graph.addEdge(y, x, 9);
+        graph.addEdge(x, z, 4);
+        graph.addEdge(z, s, 7);
+        graph.addEdge(z, x, 6);
 
-        graph.dikstraAlgorithm(zero, six);
+        graph.dikstraAlgorithm(s, z);
     }
 }
